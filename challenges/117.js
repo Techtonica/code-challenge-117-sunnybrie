@@ -16,9 +16,16 @@
 // To get it working, don't worry about efficiency. Later we'll learn about specialized data structures that make this simpler/efficient.
 
 function intersection(a, b){
-  return(
-    // replace this line with your code
-  );
-}
+  let arrMatches = [];
+  match = function(arr, checkGlyph){ return (arr.indexOf(checkGlyph) !== -1); };
+  a.map(item => {
+    if(match(b, item)){
+      arrMatches.push(item);
+    };
+  });
+  return arrMatches;
+};
 
+console.log(intersection(['d', 'b', 'z'], ['f', 'z', 'k']));
+console.log(intersection(['k', 'l', 'm'], ['f', 'z', 'k']));
 module.exports = intersection;
